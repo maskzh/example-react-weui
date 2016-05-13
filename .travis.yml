@@ -1,0 +1,24 @@
+sudo: false
+language: node_js
+node_js:
+  - stable
+branches:
+  only:
+  - master
+env:
+  global:
+    - GH_REF: github.com/maskzh/example-react-weui.git
+    - secure: "kXKtE/uutG/nxmYA/ylmpBcrb/D7+Bcu9UvldMcWc16m+/u1CG2bZ+GBaBAUwdU+1M6r84V0Rg6FbjnOMoWl8DZ8fFpW1WZJDUtQeUdvbnjNHvCKH1ROKjrQcX7CezFNg1oKmDosDL5spOl8vpuXozLLH/cTbfkBitLKcy3KpwmPeowoLFfYa6bISVW2PBDDH2F1lItzE9u5UsLjFiiQJj/O2SH2ehPruQZJYEyq7RENtl8wTgS1492lxWT5R6vrm17pri2Oc4h4KvqpIQ1Y6Moe7ye9wtCCvnaBRrZgE7eKhwbbZHKo5ZDi7RAC5iffONtzpuSsMaSOlGWGzfjdb1Wu5I89Oo2V79aU4cGKmMv16GSBJ/Ui2VQdeDew1Imsp0T7XJ0Qo8PlasDsrHcBz4yHH+bYlBJ1YUWlAVun/io7wukFA0xxg0rdUoLJUAykznm5TMiRUOp7tWFulwsrAmVvoxl2m2UVGC/h2ok+cZpSSy8kQ4XCmeU0p4w0dqg/VanQ7Q4yARggNoR26BB+bIi1kvtcabn4JKGmO5uXNRbNN9a+ziugACkNtrFRAE7KiqweqTJfE3bWAF4Jtyrf7wXVQ0HVU5QoMO2IvIXegSjFjXn3J3+WXyKmybl92dplNCXiaeLK/8drvw24k9ZwUmRAsTjN/ZzYaCHUqlr/Sig="
+install:
+- npm install webpack -g
+- npm install
+script:
+- npm run build
+- cd dist
+- git init
+- git config user.name "maskzh" #填入GitHub的用户名
+- git config user.email "maskzh@gmail.com" #填入GitHub的邮箱地址
+- git add .
+- git commit -m "build" #自动构建后的内容将全部以此信息提交
+- git checkout -b dist
+- git push -f "https://${GH_TOKEN}@${GH_REF}" dist
