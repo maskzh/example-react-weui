@@ -26,9 +26,8 @@ config.plugins = (config.plugins || []).concat([
     name: 'lib',
     minChunks: Infinity,
   }),
-  // https://github.com/ampedandwired/html-webpack-plugin
   new HtmlWebpackPlugin({
-    title: '采购后台',
+    title: '分销商城',
     filename: 'index.html',
     template: 'src/index.html'
   }),

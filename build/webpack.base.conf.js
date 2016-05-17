@@ -1,23 +1,21 @@
 var path = require('path')
+
 module.exports = {
   entry: {
     app: './src/index.js',
     lib: [
       'react',
+      'react-dom',
       'react-router',
       'react-redux',
       'redux',
       'redux-thunk',
       'redux-simple-router',
-      'redux-localstorage',
+      'redux-persist',
       'lodash',
       'normalizr',
-      'antd',
-      'moment',
       'humps',
-      'isomorphic-fetch',
-      'sha1',
-      'echarts'
+      'isomorphic-fetch'
     ]
   },
   output: {

@@ -1,5 +1,6 @@
 {
   "extends": "eslint-config-airbnb",
+  "parser": "babel-eslint",
   "ecmaFeatures": {
     "jsx": true,
     "modules": true
@@ -8,16 +9,10 @@
     "browser": true,
     "node": true
   },
-  "parser": "babel-eslint",
   "rules": {
     "comma-dangle": 0,
     "no-console": 0,
     "id-length": 0,
-    "semi": [2, "never"],
-    # "react/prop-types": 0,
-    # "react/prefer-stateless-function": 0
-  },
-  # "plugins": [
-  #   "react"
-  # ]
+    "semi": [2, "never"]
+  }
 }
