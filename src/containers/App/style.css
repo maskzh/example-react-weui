@@ -1,0 +1,29 @@
+.normal{
+  height: 100vh;
+}
+.wrapper{
+  padding-top: 60px;
+  height: 100%;
+}
+.sider{
+  width: 230px;
+  height: 100%;
+  float: left;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.main{
+  position: relative;
+  height: 100%;
+  margin-left: 230px;
+  padding: 15px 15px 15px;
+}
+.content {
+  position: relative;
+  height: 100%;
+  padding: 15px;
+  overflow: hidden;
+  background-color: #fff;
+
+}

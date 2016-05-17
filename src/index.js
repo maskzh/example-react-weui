@@ -9,7 +9,6 @@ import Root from './containers/Root'
 import configureStore from './store'
 
 // 导入样式文件
-import 'antd/lib/index.css'
 import './styles/toolkit.css'
 import './styles/index.css'
 
