@@ -1,16 +1,7 @@
 {
   "extends": "eslint-config-airbnb",
   "parser": "babel-eslint",
-  "plugins": ["import"],
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "mocha": true
-  },
+  "plugins": ["react", "import"],
   "rules": {
     "comma-dangle": 0,
     "no-console": 0,
@@ -18,5 +9,6 @@
     "semi": [2, "never"],
     "no-param-reassign": [2, { "props": false }], # 参数不可修改，属性可修改
     "no-underscore-dangle": 0,                    # 允许 _
+    "react/jsx-first-prop-new-line": 0
   }
 }

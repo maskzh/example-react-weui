@@ -4,18 +4,20 @@ module.exports = {
   entry: {
     app: './src/index.js',
     lib: [
-      'react',
-      'react-dom',
-      'react-router',
-      'react-redux',
-      'redux',
-      'redux-thunk',
-      'redux-simple-router',
-      'redux-persist',
-      'lodash',
-      'normalizr',
-      'humps',
-      'isomorphic-fetch'
+      "classnames",
+      "humps",
+      "isomorphic-fetch",
+      "lodash",
+      "normalizr",
+      "react",
+      "react-dom",
+      "react-redux",
+      "react-router",
+      "react-weui",
+      "redux",
+      "redux-actions",
+      "redux-localstorage",
+      "redux-simple-router",
     ]
   },
   output: {
