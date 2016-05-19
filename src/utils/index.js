@@ -2,7 +2,7 @@
  * 工具函数
  */
 import 'isomorphic-fetch'
-import { merge } from 'lodash'
+import { merge, forIn } from 'lodash'
 import { decamelize, decamelizeKeys } from 'humps'
 
 // 解析为 Json
@@ -54,13 +54,12 @@ export function ajax(url, options) {
 
 // 将对象序列化为 query
 export function serialize(obj) {
-  let p
   const str = []
-  for (p in obj) {
-    if (obj.hasOwnProperty(p)) {
-      str.push(`${p}=${obj[p]}`)
+  forIn(obj, (value, key) => {
+    if (obj.hasOwnProperty(key)) {
+      str.push(`${key}=${value}`)
     }
-  }
+  })
   return str.join('&')
 }
 
@@ -77,11 +76,11 @@ export function getQueryParameters(str) {
 // 判断对象是否为空
 export function hasSomeProperties(obj) {
   let flag = false
-  for (const key in obj) {
+  forIn(obj, (value, key) => {
     if (obj.hasOwnProperty(key)) {
       flag = true
     }
-  }
+  })
   return flag
 }
 

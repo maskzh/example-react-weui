@@ -2,9 +2,10 @@
  * 常量定义
  */
 
+// 请求专属 的 TYPE 类型
 export const CALL_API = Symbol('Call API')
 
-// error message
+// 错误信息
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 
 // clients 客户
@@ -16,6 +17,3 @@ export const CLIENTS_RESET = 'CLIENTS_RESET'
 export const CLIENT_REQUEST = 'CLIENT_REQUEST'
 export const CLIENT_SUCCESS = 'CLIENT_SUCCESS'
 export const CLIENT_FAILURE = 'CLIENT_FAILURE'
-
-export const CLIENT_FORM_UPDATE = 'CLIENT_FORM_UPDATE'
-export const CLIENT_FORM_DELETE = 'CLIENT_FORM_DELETE'

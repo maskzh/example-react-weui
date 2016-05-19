@@ -1,7 +1,7 @@
 import { merge, union } from 'lodash'
 // Creates a reducer managing pagination, given the action types to handle,
 // and a function telling how to extract the key from an action.
-export function paginate({ types, mapActionToKey, resetType }) {
+export default function paginate({ types, mapActionToKey, resetType }) {
   return function handlePagination(state = {}, action) {
     // 预先处理非加载数据情况
     if (action.type === resetType) {

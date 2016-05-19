@@ -9,6 +9,7 @@
     "semi": [2, "never"],
     "no-param-reassign": [2, { "props": false }], # 参数不可修改，属性可修改
     "no-underscore-dangle": 0,                    # 允许 _
-    "react/jsx-first-prop-new-line": 0
+    "react/jsx-first-prop-new-line": 0,
+    "global-require": 0
   }
 }

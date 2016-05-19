@@ -1,15 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { resetErrorMessage } from '../../actions/errorMessage'
-import style from './style.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
   componentDidUpdate() {
     const { errorMessage } = this.props
     if (!errorMessage) {
@@ -20,24 +13,16 @@ class App extends Component {
   render() {
     const { children } = this.props
     return (
-      <div className={style.normal}>
-        <div className={style.wrapper}>
-          <div className={style.main}>
-            <div className={style.content}>
-              {children}
-            </div>
-          </div>
-        </div>
+      <div className="container">
+        {children}
       </div>
     )
   }
 }
 
 App.propTypes = {
-  // Injected by React Redux
   errorMessage: PropTypes.string,
   resetErrorMessage: PropTypes.func.isRequired,
-  // Injected by React Router
   children: PropTypes.node
 }
 
