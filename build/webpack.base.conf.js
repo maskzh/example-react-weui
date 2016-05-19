@@ -17,7 +17,7 @@ module.exports = {
       "redux",
       "redux-actions",
       "redux-localstorage",
-      "redux-router-redux",
+      "react-router-redux",
     ]
   },
   output: {

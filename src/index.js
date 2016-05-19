@@ -11,7 +11,7 @@ import configureStore from './store'
 
 // 导入样式文件
 import './styles/toolkit.css'
-import './styles/index.css'
+import './styles/index.styl'
 
 const store = configureStore(window.__INITIAL_STATE__)
 

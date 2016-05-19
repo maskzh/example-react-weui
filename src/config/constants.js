@@ -8,12 +8,12 @@ export const CALL_API = Symbol('Call API')
 // 错误信息
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 
-// clients 客户
-export const CLIENTS_REQUEST = 'CLIENTS_REQUEST'
-export const CLIENTS_SUCCESS = 'CLIENTS_SUCCESS'
-export const CLIENTS_FAILURE = 'CLIENTS_FAILURE'
-export const CLIENTS_RESET = 'CLIENTS_RESET'
+// 用户
+export const USERS_REQUEST = 'USERS_REQUEST'
+export const USERS_SUCCESS = 'USERS_SUCCESS'
+export const USERS_FAILURE = 'USERS_FAILURE'
+export const USERS_RESET = 'USERS_RESET'
 
-export const CLIENT_REQUEST = 'CLIENT_REQUEST'
-export const CLIENT_SUCCESS = 'CLIENT_SUCCESS'
-export const CLIENT_FAILURE = 'CLIENT_FAILURE'
+export const USER_REQUEST = 'USER_REQUEST'
+export const USER_SUCCESS = 'USER_SUCCESS'
+export const USER_FAILURE = 'USER_FAILURE'

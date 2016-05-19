@@ -27,7 +27,7 @@ export default [{
       path: '/home',
       component: Home,
       name: 'Home',
-      breadcrumbName: '控制中心'
+      breadcrumbName: '首页'
     },
   ]
 }]
