@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+// import { connent } from 'react-redux'
 import {
   Cells,
   Grids,
+  Button,
 } from 'react-weui'
+// import style from './style.styl'
 import Page from '../../components/Page'
 import IconButton from './img/1.jpg'
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,11 +20,11 @@ export default class Home extends Component {
       }, {
         icon: <img src={IconButton} role="presentation" />,
         label: '按疾病筛选商品',
-        href: '#button'
+        href: '#income'
       }, {
         icon: <img src={IconButton} role="presentation" />,
-        label: 'Button',
-        href: '#button'
+        label: '订单',
+        href: '#order'
       }, {
         icon: <img src={IconButton} role="presentation" />,
         label: 'Button',
@@ -42,10 +45,34 @@ export default class Home extends Component {
           />
         </Cells>
         <Cells>
-          <div style={{ height: '100px' }}></div>
+          <div className="row center" style={{ height: '100px' }}>
+            <a href="#income" className="flex1 text-center">
+              <span className="h4">0.00</span> <br />
+              今日收入
+            </a>
+            <a href="#income" className="flex1 text-center bl1">
+              <span className="h4">0.00</span> <br />
+              今日收入
+            </a>
+          </div>
         </Cells>
         <Grids className="white" data={this.state.grids} style={{ marginTop: '20px' }} />
+        <a href="#help" style={{ display: 'block', margin: '100px 80px 0' }}>
+          <Button type="primary" plain style={{ borderRadius: '20px' }}>新手必读</Button>
+        </a>
       </Page>
     )
   }
 }
+
+// function mapStateToProps(state) {
+//   const {
+//     entites: homeData,
+//     pagination: { home: { loading } }
+//   } = state
+//   return {
+//     data: homeData,
+//     loading,
+//   }
+// }
+export default Home
