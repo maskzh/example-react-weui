@@ -3,9 +3,10 @@
  */
 import React from 'react'
 import { render } from 'react-dom'
-import { hashHistory } from 'react-router'
+import { Provider } from 'react-redux'
+import { Router, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 import routes from './config/routes'
-import Root from './containers/Root'
 import configureStore from './store'
 
 // 导入样式文件
@@ -14,9 +15,11 @@ import './styles/index.css'
 
 const store = configureStore(window.__INITIAL_STATE__)
 
-const history = hashHistory
+const history = syncHistoryWithStore(browserHistory, store)
 
 render(
-  <Root store={store} history={history} routes={routes} />,
+  <Provider store={store}>
+    <Router history={history} routes={routes} />
+  </Provider>,
   document.getElementById('root')
 )

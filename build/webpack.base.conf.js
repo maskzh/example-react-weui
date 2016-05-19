@@ -17,7 +17,7 @@ module.exports = {
       "redux",
       "redux-actions",
       "redux-localstorage",
-      "redux-simple-router",
+      "redux-router-redux",
     ]
   },
   output: {
@@ -37,26 +37,28 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /(toolkit|index)\.css$/,
-        loader: 'style-loader?insertAt=top!css-loader'
-      },
-      {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-        ],
-        exclude: /(index|toolkit)\.css$/
+        loader: 'style-loader?insertAt=top!css-loader',
+        include: path.resolve(__dirname, '../src/styles')
       },
       {
         test: /\.styl$/,
-        loader: 'style-loader!css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
+        loader: 'style-loader?insertAt=top!css-loader!stylus-loader',
+        include: path.resolve(__dirname, '../src/styles')
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader',
+        include: [
+          path.resolve(__dirname, '../src/components'),
+          path.resolve(__dirname, '../src/containers')
+        ],
       },
       {
         test: /\.js[x]?$/,
-        include: path.resolve(__dirname, '../src'),
         loader: 'babel!eslint',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include: path.resolve(__dirname, '../src'),
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

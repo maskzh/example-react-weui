@@ -1,8 +1,8 @@
 import { normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
-import { CALL_API } from '../config/constants'
 import { ajax as fetch } from '../utils'
 import { assign } from 'lodash'
+import { CALL_API } from '../config/constants'
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.
@@ -68,7 +68,7 @@ export default store => next => action => {
     })),
     error => next(actionWith({
       type: failureType,
-      error: error.message || 'Something bad happened'
+      error: error && error.message || 'Something bad happened! 😭😭😭'
     }))
   )
 }
