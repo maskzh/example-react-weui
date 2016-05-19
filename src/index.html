@@ -2,14 +2,14 @@
 <html lang="cn">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title><%=  htmlWebpackPlugin.options.title %></title>
     <!-- <% for (var css in htmlWebpackPlugin.files.css) { %>
     <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
     <% } %> -->
   </head>
-  <body>
-    <div id="root"></div>
+  <body ontouchstart>
+    <div class="container" id="container"></div>
     <!-- <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
     <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
     <% } %> -->

@@ -4,16 +4,17 @@ import { resetErrorMessage } from '../../actions/errorMessage'
 
 class App extends Component {
   componentDidUpdate() {
-    const { errorMessage } = this.props
-    if (!errorMessage) {
-      return
-    }
-    this.props.resetErrorMessage()
+    if (!this.props.errorMessage) return
+    setTimeout(() => this.props.resetErrorMessage(), 3000)
   }
   render() {
-    const { children } = this.props
+    const { errorMessage, children } = this.props
     return (
-      <div className="container">
+      <div>
+        <div
+          className="weui_toptips weui_warn"
+          style={{ display: errorMessage ? 'block' : 'none' }}
+        >{errorMessage}</div>
         {children}
       </div>
     )
@@ -23,7 +24,7 @@ class App extends Component {
 App.propTypes = {
   errorMessage: PropTypes.string,
   resetErrorMessage: PropTypes.func.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 function mapStateToProps(state) {

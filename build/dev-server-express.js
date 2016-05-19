@@ -7,18 +7,18 @@ var app = express()
 var compiler = webpack(config)
 
 // proxy
-var proxy = require('http-proxy-middleware')([
-  '**',
-  '!/',
-  '!/(maskzh)**',
-  '!/*.(html|js|css|png|jpg|gif|json)',
-  '!/__webpack_hmr*'
-], {
-  target: 'http://purchase.jkbsapp.com',
-  logLevel: 'debug',
-  changeOrigin: true
-})
-app.use(proxy)
+// var proxy = require('http-proxy-middleware')([
+//   '**',
+//   '!/',
+//   '!/(maskzh)**',
+//   '!/*.(html|js|css|png|jpg|gif|json)',
+//   '!/__webpack_hmr*'
+// ], {
+//   target: 'http://purchase.jkbsapp.com',
+//   logLevel: 'debug',
+//   changeOrigin: true
+// })
+// app.use(proxy)
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())

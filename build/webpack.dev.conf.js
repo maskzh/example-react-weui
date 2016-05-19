@@ -2,6 +2,7 @@ var webpack = require('webpack')
 var config = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var OpenBrowserPlugin = require('open-browser-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 
 // eval-source-map is faster for development
@@ -26,6 +27,7 @@ config.plugins = (config.plugins || []).concat([
     name: 'lib',
     minChunks: Infinity,
   }),
+  new ExtractTextPlugin('[name].[contenthash].css'),
   new HtmlWebpackPlugin({
     title: '分销商城',
     filename: 'index.html',

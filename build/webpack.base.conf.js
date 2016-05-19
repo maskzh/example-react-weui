@@ -39,7 +39,10 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader?insertAt=top!css-loader',
-        include: path.resolve(__dirname, '../src/styles')
+        include: [
+          path.resolve(__dirname, '../src/styles'),
+          path.resolve(__dirname, '../node_modules/weui')
+        ]
       },
       {
         test: /\.styl$/,
