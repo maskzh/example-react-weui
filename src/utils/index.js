@@ -19,7 +19,7 @@ export function fetchPreprocessor({ json, response }) {
     }
     if (response.status === 401) {
       auth.logout()
-      alert('您的身份认证失败！')
+      console.log('您的身份认证失败！')
     }
     return reject(json)
   })
