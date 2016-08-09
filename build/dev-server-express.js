@@ -14,7 +14,7 @@ var compiler = webpack(config)
 //   '!/*.(html|js|css|png|jpg|gif|json)',
 //   '!/__webpack_hmr*'
 // ], {
-//   target: 'http://purchase.jkbsapp.com',
+//   target: 'http://example.com',
 //   logLevel: 'debug',
 //   changeOrigin: true
 // })
