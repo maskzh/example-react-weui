@@ -6,6 +6,11 @@ var config = require('./webpack.dev.conf')
 var app = express()
 var compiler = webpack(config)
 
+app.use(express.static(__dirname + '/../dist'));
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + "/../dist/index.html");
+});
+
 // proxy
 // var proxy = require('http-proxy-middleware')([
 //   '**',
